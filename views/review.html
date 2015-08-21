@@ -2,11 +2,12 @@
 <html lang="en">
   <head>
   	<title>Ride Review</title>
-  	<link rel="stylesheet" type="text/css" href="../public/stylesheets/style.css">
+  	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
   </head>
   <body>
 
   	<form method="post" >
+  		
 <p>Condition of the vechile?</p>
 <input type="radio" name="condition" value="poor">Poor
 <br>
@@ -26,10 +27,17 @@
 <textarea rows="4" cols="50" name="comment">Enter text here...</textarea>
 
 <br>
-<input type='submit', value='upload'/>
+        Name<br>
+		<input type="text" name="name">
+		<br>
+		<br>
+		E-mail Address<br>
+		<input type="text" name="email">
+		<br>
+		<br>
+<input type='submit', value='submit'/>
 </form>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="../public/javascripts/test.js"></script>
   </body>
 </html>
