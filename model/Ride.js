@@ -1,8 +1,8 @@
 var mongoose = require('mongoose');
-var var uristring =
+var uristring =
 process.env.MONGOLAB_URI ||
 process.env.MONGOHQ_URL ||
-'mongodb://localhost/photo_app';
+'mongodb://localhost/home';
 
 
 console.log("Attempting to start Mongo Server");
@@ -17,4 +17,4 @@ var schema = new mongoose.Schema({
 });
 
 
-module.exports = mongoose.model('Photo', schema);
+module.exports = mongoose.model('Ride', schema);
