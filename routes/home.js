@@ -30,3 +30,7 @@ exports.submit = function(req,res){
 		});
 	});
 }
+
+exports.review = function(req, res){
+	res.render('review',{title:"Ride Review"})
+}

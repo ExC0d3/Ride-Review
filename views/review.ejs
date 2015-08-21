@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  	<title><%=title%></title>
+  	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+  </head>
+  <body>
+
+  	<form method="post" >
+<p><strong>Condition of the vechile?</strong></p>
+<input type="radio" name="condition" value="poor"/>Poor
+<br>
+<input type="radio" name="condition" value="average"/>Average
+<br>
+<input type="radio" name="condition" value="good"/>Good
+<br>
+<p>Behaviour of the driver?</p>
+<input type="radio" name="behaviour" value="poor"/>Poor
+<br>
+<input type="radio" name="behaviour" value="average"/>Average
+<br>
+<input type="radio" name="behaviour" value="good"/>Good
+
+<br>
+<p><strong>Review The Ride</strong></p>
+<textarea rows="4" cols="50" name="comment">Enter your review</textarea>
+
+<br>
+<input type='submit', value='upload'/>
+</form>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    
+  </body>
+</html>
