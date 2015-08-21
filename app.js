@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var home = require('./routes/home')
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var busboy = require('connect-busboy');
 
 var app = express();
 
@@ -17,13 +18,15 @@ app.set('view engine', 'ejs');
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+/**app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));**/
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(busboy());
 
-app.use('/', home.show);
-app.use('/users', users);
+app.get('/',home.show);
+app.get('/upload',home.form);
+app.post('/upload',home.submit);
 
 app.listen(process.env.PORT || 3000, function(){
   console.log("Server started on %d", this.address().port);

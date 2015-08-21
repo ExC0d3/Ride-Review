@@ -9,7 +9,7 @@ console.log("Attempting to start Mongo Server");
 var db = mongoose.connect(uristring);
 
 var schema = new mongoose.Schema({
-	plateNum: Number,
+	plateNum: String,
 	Review: String,
 	Condition: String,
 	Behaviour: String,

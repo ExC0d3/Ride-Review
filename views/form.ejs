@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+	<title><%= title %></title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+</head>
+<body>
+	<h1><%= title %></h1>
+	<p>Type In the License Number</p>
+	<form method="POST" enctype="multipart/form-data">
+		<p>
+			<input type='text', name='license', placeholder="License"/>
+		</p>
+		
+		<p>
+			<input type='submit', value='upload'/>
+		</p>
+	</form>
+</body>
+</html>
