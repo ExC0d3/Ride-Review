@@ -1,0 +1,43 @@
+video#bgvid {
+position: fixed;
+top: 50%;
+left: 50%;
+min-width: 100%;
+min-height: 100%;
+width: auto;
+height: auto;
+z-index: -100;
+-webkit-transform: translateX(-50%) translateY(-50%);
+transform: translateX(-50%) translateY(-50%);
+background: url(polina.jpg) no-repeat;
+background-size: cover;
+}
+@media screen and (max-device-width: 800px) {
+body { background: url(polina.jpg) #000 no-repeat center center fixed; }
+#bgvid { display: none; }
+}
+section#Button .contribute-btn{
+  display: inline-block;
+  margin: 250px auto 20px auto;
+  padding: 20px 60px;
+  line-height: 1.3;
+  text-align: center;
+  font-size: 18px;
+  font-size: 1.125rem;
+  background: #7A7675;
+  border-radius: 10px;
+  text-transform: uppercase;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  text-decoration: none;
+  color:white;
+  font-weight: bold;
+  opacity: 0.5;
+}
+section#Button .contribute-btn:visited {
+  color: #fff;
+}
+section#Button .contribute-btn:hover{
+  color: #7A7675;
+  background: #fff;
+}
