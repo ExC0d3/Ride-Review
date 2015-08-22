@@ -12,7 +12,6 @@ var Person = new mongoose.Schema({
 	
 	email: String,
 	Review: String,
-	
 	Condition: String,
 	Behaviour: String,
 	Rating: Number
@@ -24,7 +23,6 @@ var schema = new mongoose.Schema({
 	plateNum: [String],
 	person: [Person]
 });
-
 
 
 module.exports = mongoose.model('Ride', schema);

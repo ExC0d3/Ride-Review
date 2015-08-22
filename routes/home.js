@@ -1,6 +1,6 @@
 var Ride = require('../model/Ride.js');
 var name;
-
+var arr = [];
 
 exports.show = function(req, res) {
 	res.render('front',{title:"Ride Review"});
@@ -102,13 +102,14 @@ exports.reviewStore = function(req, res){
 			}
 			else
 			{
-				console.log(rider);
+				
+			    
 				rider.person.push(object);
 				rider.save(function(err){
 					if(err) throw err;
 					console.log("Record Updated Succesfully");
-					res.send("Thank you for reviewing");
-					res.redirect('/');
+					
+					res.redirect('/feedback');
 				});
 
 
@@ -119,6 +120,29 @@ exports.reviewStore = function(req, res){
 }
 
 
-exports.events = function(req,res) {
-	res.render('/event')
+exports.feedback = function(req,res) {
+	
+	var stream = Ride.find().stream();
+	
+	stream.on('data', function (doc) {
+  // do something with the mongoose document
+  	arr.push(doc);
+  	
+	}).on('error', function (err) {
+		throw error;
+  // handle the error
+	}).on('close', function () {
+  // the stream is closed
+  	var count = 0;
+	arr.forEach(function(x){
+		console.log(x["plateNum"][0] + x["person"][0]);
+		count += 1;
+	});
+	
+	res.render('feedback',{docs:arr,count:count});
+	
+
+});
+
 }
+
