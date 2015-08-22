@@ -27,6 +27,8 @@ app.use(busboy());
 app.get('/',home.show);
 app.get('/upload',home.form);
 app.post('/upload',home.submit);
+app.get('/review',home.review);
+app.post('/review',home.reviewStore);
 
 app.listen(process.env.PORT || 3000, function(){
   console.log("Server started on %d", this.address().port);

@@ -1,0 +1,62 @@
+body 
+{
+  padding-top: 0px;
+ background-color:#BEA9E9;
+ }
+ h2
+  {
+  	font-size: 70px;
+  	margin-left:50px;
+  	font-weight: bold;
+  	text-shadow:3px 3px 5px;
+  }
+  
+ #sec1
+ {	
+  	height:120px;
+  	font-family: 'Indie Flower', cursive;
+ }
+ #sec2
+ {
+ 	margin-top: 30px;
+ 	background-color: #FFADD6;
+ 	height:190px;
+ }
+ #sec2 h2
+ {
+ 	padding-top:30px;
+ 	padding-bottom:30px;
+ }
+
+form
+{
+	padding:30px;
+}
+#heading1
+{
+	font-size: 50px;
+	text-shadow:5px 5px 15px;
+	
+}
+small
+{
+	text-shadow:5px 5px 15px;
+}
+h3
+{
+	font-weight: bold;
+	font-size: 30px;
+}
+p
+{
+	font-size: 18px;
+}
+#sec3
+{
+	padding-top:40px;
+}
+button
+{
+	background-color:#FFADD6;
+	
+}
