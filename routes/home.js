@@ -3,7 +3,7 @@ var name;
 
 
 exports.show = function(req, res) {
-	res.render('index',{title:"Ride Review"});
+	res.render('front',{title:"Ride Review"});
 }
 
 exports.form = function(req,res) {
@@ -61,7 +61,7 @@ exports.reviewStore = function(req, res){
 	var behaviour;
 	req.busboy.on('field', function(key,value){
 		
-		if(key='email')
+		if(key=='email')
 		{
 			email=value;
 		}else if(key=='condition')
@@ -70,7 +70,7 @@ exports.reviewStore = function(req, res){
 		}else if(key=='behaviour')
 		{
 			behaviour=value;
-		}else if(key=='review')
+		}else if(key=='comment')
 		{
 			review = value;
 		}else if(key=='rating')
@@ -82,6 +82,7 @@ exports.reviewStore = function(req, res){
 
 	req.busboy.on('finish',function(){
 		console.log("Finished parsing form");
+		console.log(email+" "+review+" "+condition+" "+behaviour+" "+rating);
 		var object = {
 			"email":email,
 			"Review":review,
@@ -115,4 +116,9 @@ exports.reviewStore = function(req, res){
 		});
 		
 	});
+}
+
+
+exports.events = function(req,res) {
+	res.render('/event')
 }
