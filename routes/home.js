@@ -1,7 +1,9 @@
 var Ride = require('../model/Ride.js');
 var name;
+
+
 exports.show = function(req, res) {
-	res.render('home',{title:"Ride Review"});
+	res.render('index',{title:"Ride Review"});
 }
 
 exports.form = function(req,res) {
@@ -104,6 +106,8 @@ exports.reviewStore = function(req, res){
 				rider.save(function(err){
 					if(err) throw err;
 					console.log("Record Updated Succesfully");
+					res.send("Thank you for reviewing");
+					res.redirect('/');
 				});
 
 
