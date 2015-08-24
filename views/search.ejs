@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Ride Review</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/stylesheets/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/stylesheets/style2.css" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/front.css">
+    
+  <body>
+    <div class="jumbotron">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6" id="title">
+              <h1>Ride <span class="em-text">Review</span></h1>
+              
+              <br/>
+            <form method="post">
+              <div class="form-group">
+                <h2>Number Plate</h2>
+                
+                <form method="POST" enctype="multipart/form-data">
+                  <p>
+                    <input type='text', class="form-control", name='license', placeholder="License"/>
+                  </p>
+
+                  <p>
+                    <input type='text', class="form-control", name='name', placeholder="Enter Your Name"/>
+                  </p>
+                  
+                  <section id="Buttony">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                      <center><a type="submit" class="contribute-btn" href="#" data-element-location="button-click">Get Details</a></center>
+                    </div>
+                  </section>
+
+                </form>
+              </div>
+              
+            </form>
+          </div>
+          <div class="col-md-6 visible-lg">
+            <img src="/images/auto.png"style="padding-top: 110px;">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+body 
+{
+  padding-top: 0px;
+ background-color:#BEA9E9;
+ }
+
+a
+{
+	text-color : green;
+}
+
+.em-text{
+  color:#3B4552;
+}
+.jumbotron{
+  background:#1caa98 url(../images/taj.jpeg) no-repeat top center ;
+  height: 598px;
+  color: #fff;
+  overflow: none;
+
+}
+#title{
+  padding-top: 30px;
+}
+@media(max-width: 991px){
+  .jumbotron{
+    height: 500px;
+  }
+}

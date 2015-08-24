@@ -7,7 +7,7 @@ exports.show = function(req, res) {
 }
 
 exports.form = function(req,res) {
-	res.render('form',{title:"Ride Review"});
+	res.render('search',{title:"Ride Review"});
 }
 
 exports.submit = function(req,res){
