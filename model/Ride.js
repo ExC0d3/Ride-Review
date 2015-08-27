@@ -31,23 +31,6 @@ var Ride = new mongoose.Schema({
 });
 
 
-Ride.methods.details = function(){
-	console.log("License Number: "+this.vehicle.license);
-	console.log("Riders :"+this.person.name);
-}
-
-Ride.methods.locate = function(collec,query){
-	mongoose.connection.db.collection(collec, function(err, collection){
-		if (err) throw err;
-		console.log(collection);
-		db.collection.find({'vehicle.license':"DL-3C-AF-5998"},function(err,doc){
-			if(err) throw err;
-			console.log(doc);
-
-		});
-	
-	});
-}
 
 
 module.exports = mongoose.model('Ride', Ride,'myRides');
