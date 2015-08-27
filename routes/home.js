@@ -1,6 +1,7 @@
 var Ride = require('../model/Ride.js');
 var name;
 var arr = [];
+var rider;
 
 exports.show = function(req, res) {
 	res.render('front',{title:"Ride Review"});
@@ -30,10 +31,12 @@ exports.submit = function(req,res){
 		Ride.findOne({'plateNum':val, 'name':name},'plateNum',function(err,rider){
 			if(rider==null)
 			{
-				Ride.create({'plateNum':val,'name':name}, function(err,test){
+				rider = new Ride({'plateNum':val,'name':name});
+				rider.save(function(err,rider){
 					if(err) throw err;
-					console.log("New Auto Rider Created");
+					rider.details();
 				});
+				
 
 			} else {
 
@@ -104,7 +107,7 @@ exports.reviewStore = function(req, res){
 			{
 				
 			    
-				rider.person.push(object);
+				rider.update({name:"Abhinav"});
 				rider.save(function(err){
 					if(err) throw err;
 					console.log("Record Updated Succesfully");

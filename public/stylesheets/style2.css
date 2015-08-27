@@ -13,7 +13,7 @@ a
   color:#3B4552;
 }
 .jumbotron{
-  background:#1caa98 url(../images/taj.jpeg) no-repeat top center ;
+  background:#1caa98 url(/images/taj.jpeg) no-repeat top center ;
   height: 598px;
   color: #fff;
   overflow: none;

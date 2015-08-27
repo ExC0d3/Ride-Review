@@ -8,21 +8,24 @@ process.env.MONGOHQ_URL ||
 console.log("Attempting to start Mongo Server");
 var db = mongoose.connect(uristring);
 
-var Person = new mongoose.Schema({
-	
-	email: String,
-	Review: String,
-	Condition: String,
-	Behaviour: String,
-	Rating: Number
-});
 
 
 var schema = new mongoose.Schema({
 	name: String,
-	plateNum: [String],
-	person: [Person]
+	plateNum: String,
+	person: {
+		email: String,
+		Review: String,
+		Condition: String,
+		Behaviour: String,
+		Rating: Number
+	}
 });
 
+schema.methods.details = function(){
+	console.log("Created Rider");
+	console.log("Name: "+this.name);
+	console.log("License: "+this.name);
+}
 
 module.exports = mongoose.model('Ride', schema);
