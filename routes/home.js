@@ -1,5 +1,5 @@
-var Ride = require('../model/Ride.js');
-var name;
+var Ride = require('../model/Ride');
+var name,license;
 var arr = [];
 var rider;
 
@@ -13,13 +13,12 @@ exports.form = function(req,res) {
 
 exports.submit = function(req,res){
 	req.pipe(req.busboy);
-	var val;
 	req.busboy.on('field',function(key,value){
 		console.log("Key: " + key);
 		console.log("Value: "+value);
 		if(key=="license")
 		{
-			val = value;
+			license = value;
 		}
 		else if(key=="name")
 		{
@@ -28,22 +27,22 @@ exports.submit = function(req,res){
 	});
 
 	req.busboy.on('finish',function(){
-		Ride.findOne({'plateNum':val, 'name':name},'plateNum',function(err,rider){
-			if(rider==null)
+		
+		Ride.find({"vehicle.license":license},function(err,rider){
+			
+
+			if(err) throw err;
+
+			if(rider)
 			{
-				rider = new Ride({'plateNum':val,'name':name});
-				rider.save(function(err,rider){
-					if(err) throw err;
-					rider.details();
-				});
-				
-
-			} else {
-
-				console.log("Rider Present ID="+rider.plateNum);
-
-
+				console.log("Rider already present");
 			}
+			else
+			{
+				console.log("Rider not present");
+			}
+			
+
 		});
 });
 	res.redirect('profile');
