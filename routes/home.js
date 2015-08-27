@@ -45,13 +45,17 @@ exports.submit = function(req,res){
 
 		});
 });
-	res.redirect('review');
+	res.redirect('profile');
 }
 
 
 exports.profile = function(req, res){
-	res.render('reviewForm',{title:"Ride Review"});
+	res.render('profile',{title:"Ride Review"});
 
+}
+
+exports.review = function(req ,res){
+	res.render('reviewForm');
 }
 
 exports.reviewStore = function(req, res){
