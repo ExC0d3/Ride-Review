@@ -45,12 +45,12 @@ exports.submit = function(req,res){
 
 		});
 });
-	res.redirect('profile');
+	res.redirect('review');
 }
 
 
 exports.profile = function(req, res){
-	res.render('profile',{title:"Ride Review"});
+	res.render('reviewForm',{title:"Ride Review"});
 
 }
 
