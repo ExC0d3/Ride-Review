@@ -10,22 +10,47 @@ var db = mongoose.connect(uristring);
 
 
 
-var schema = new mongoose.Schema({
-	name: String,
-	plateNum: String,
-	person: {
-		email: String,
-		Review: String,
-		Condition: String,
-		Behaviour: String,
-		Rating: Number
+
+var Ride = new mongoose.Schema({
+	person:{
+		name:[String],
+		email:[String],
+		Review:[String],
+		Condition:[String],
+		Behaviour:[String],
+		Rating:[Number]
+	},
+
+	vehicle:{
+		license:String,
+		owner:String,
+		age:String,
+		Rating:Number
 	}
+
 });
 
-schema.methods.details = function(){
-	console.log("Created Rider");
-	console.log("Name: "+this.name);
-	console.log("License: "+this.name);
+
+Ride.methods.details = function(){
+	console.log("License Number: "+this.vehicle.license);
+	console.log("Riders :"+this.person.name);
 }
 
-module.exports = mongoose.model('Ride', schema);
+Ride.methods.locate = function(collec,query){
+	mongoose.connection.db.collection(collec, function(err, collection){
+		if (err) throw err;
+		console.log(collection);
+		db.collection.find({'vehicle.license':"DL-3C-AF-5998"},function(err,doc){
+			if(err) throw err;
+			console.log(doc);
+
+		});
+	
+	});
+}
+
+
+module.exports = mongoose.model('Ride', Ride,'myRides');
+
+
+

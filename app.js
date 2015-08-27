@@ -27,7 +27,7 @@ app.use(busboy());
 app.get('/',home.show);
 app.get('/upload',home.form);
 app.post('/upload',home.submit);
-app.get('/review',home.review);
+app.get('/profile',home.profile);
 app.post('/review',home.reviewStore);
 app.get('/feedback',home.feedback);
 

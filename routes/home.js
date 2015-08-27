@@ -46,12 +46,12 @@ exports.submit = function(req,res){
 			}
 		});
 });
-	res.redirect('review');
+	res.redirect('profile');
 }
 
 
-exports.review = function(req, res){
-	res.render('review',{title:"Ride Review"});
+exports.profile = function(req, res){
+	res.render('profile',{title:"Ride Review"});
 
 }
 
