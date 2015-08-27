@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title></title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="../public/stylesheets/css02.css">
+    <link rel="stylesheet" type="text/css" href="../public/stylesheets/bootstrap.css">
+    <link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <div class="container" >
+    	<div class="row">
+    		<div class="col-md-8 col-md-offset-2">
+    		  <h1>Rate Your Experience</h1>
+    			<form method="post" enctype="multipart/form-data" id="reviewForm" >
+    				<h3>Condition of the vechile.</h3>
+    					<input type="radio" name="condition" value="poor"/>Poor
+    					<br>
+						<input type="radio" name="condition" value="average"/>Average
+						<br>
+						<input type="radio" name="condition" value="good"/>Good
+						<br>
+					<h3>Behaviour of the driver?</h3>
+						<input type="radio" name="behaviour" value="poor"/>Poor
+						<br>
+						<input type="radio" name="behaviour" value="average"/>Average
+						<br>
+						<input type="radio" name="behaviour" value="good"/>Good
+						<br>
+					<h3>Input Number between 1 and 5</h3>
+          				<input type="number" name="rating" min="1" max="5"/>
+          				<br>
+          			<h3>Enter your Review please</h3>
+						<textarea rows="4" cols="50" name="comment" form="reviewForm">Your review here</textarea>
+						<br>
+					<h3>Enter Email ID</h3>
+      					<input type="text" name="email" placeholder="Email ID"/>
+      					<br>
+      				<input type='submit', value='submit' id="page_margin" />
+    			</form>
+    		</div>
+    	</div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="/javascripts/bootstrap.js"></script>
+  </body>
+</html>
